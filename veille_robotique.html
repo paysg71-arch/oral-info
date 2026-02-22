@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veille Technologique - Robotique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
        @import url(https://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans);
 :root {
@@ -33,15 +34,18 @@ body{
     display: flex;
     width: 100%;
     justify-content: space-around;
+    align-items: center;
     height: 80px;
     line-height: 80px;
     z-index: 111;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
         .logo{
     display: flex;
     font-size: 40px;
-    font-weight: 80px;
+    font-weight: 700;
     color: var(--my-color-gris-fonce);
     letter-spacing: 3px;
     cursor: pointer;
@@ -57,20 +61,30 @@ b{
 
         .menu{
     display: flex;
+    align-items: center;
 }
 .menu li{
     margin: 0 15px;
 }
 .menu li a{
-    font-size: 25px;
+    font-size: 22px;
     color: var(--my-color-gris-fonce);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: capitalize;
+    transition: color 0.2s ease;
+}
+.reseaux{
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    margin-left: 8px;
+    border-left: 1px solid #e5e7eb;
 }
 .reseaux a{
-    font-size: 30px;
+    font-size: 26px;
     color: var(--my-color-gris-fonce);
-    margin: 25px 10px;
+    margin: 0 12px;
+    transition: color 0.2s ease;
 }
 .menu li:hover a, .reseaux a:hover{
     color: var(--my-color-jaune);
@@ -255,25 +269,36 @@ b{
                 grid-template-columns: 1fr;
             }
         }
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px; background: #3d535f; color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 999; }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: #ffe800; color: #3d535f; transform: translateY(-4px); }
     </style>
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body>
 <header class="entete">
-        <div class="logo"><span>P</span>AYS.</div>
+        <div class="logo"><span>P</span>AYS<b>.</b></div>
         <ul class="menu">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="a propos.html">A Propos</a></li>
             <li><a href="competence.html">Compétences</a></li>
+            <li><a href="synthese.html">Synthèse</a></li>
             <li><a href="blog.html">Blog</a></li>
         </ul>
+        <div class="reseaux">
+            <a href="https://www.github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
     </header>
 
     <main>
-        <section class="hero" id="accueil">
+        <section class="hero reveal" id="accueil">
             <h1>Veille Technologique : Robotique</h1>
         </section>
 
-        <section class="intro" id="definition">
+        <section class="intro reveal" id="definition">
             <p>Pour ma veille technologique, j'ai choisi de m'intéresser à la <strong>robotique</strong>, un domaine en pleine évolution.</p>
             
             <div class="definition">
@@ -300,35 +325,35 @@ b{
             <p style="text-align: center; margin-bottom: 3rem; font-size: 1.15rem; color: #555;">Aujourd'hui, la robotique est présente dans de nombreux secteurs :</p>
             
             <div class="domains-grid">
-                <div class="domain-card">
+                <div class="domain-card reveal">
                     <div class="icon">🏭</div>
                     <h3>L'Industrie</h3>
                     <p>Bras robotisés dans les usines pour l'automatisation de la production.</p>
                     <a href="https://www.kuka.com" class="domain-link" target="_blank">Kuka</a>
                 </div>
 
-                <div class="domain-card">
+                <div class="domain-card reveal">
                     <div class="icon">🏠</div>
                     <h3>La Maison</h3>
                     <p>Aspirateurs robots et assistants domestiques intelligents.</p>
                     <a href="https://www.irobot.com" class="domain-link" target="_blank">iRobot</a>
                 </div>
 
-                <div class="domain-card">
+                <div class="domain-card reveal">
                     <div class="icon">⚕️</div>
                     <h3>La Médecine</h3>
                     <p>Robots qui assistent les chirurgiens lors d'opérations complexes.</p>
                     <a href="https://www.intuitive.com" class="domain-link" target="_blank">Intuitive</a>
                 </div>
 
-                <div class="domain-card">
+                <div class="domain-card reveal">
                     <div class="icon">🎖️</div>
                     <h3>L'Armée</h3>
                     <p>Opérations à distance et missions en terrain hostile.</p>
                     <a href="https://www.darpa.mil" class="domain-link" target="_blank">DARPA</a>
                 </div>
 
-                <div class="domain-card">
+                <div class="domain-card reveal">
                     <div class="icon">🔬</div>
                     <h3>La Science</h3>
                     <p>Exploration spatiale, fonds marins et recherche en laboratoire.</p>
@@ -338,8 +363,10 @@ b{
         </section>
     </main>
 
+    <button class="back-to-top" id="backToTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
     <footer id="contact">
         <p>&copy; 2025 PAYS - Veille Technologique Robotique</p>
     </footer>
+    <script src="animations.js"></script>
 </body>
 </html>

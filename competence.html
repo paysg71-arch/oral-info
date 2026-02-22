@@ -35,15 +35,18 @@ body{
     display: flex;
     width: 100%;
     justify-content: space-around;
+    align-items: center;
     height: 80px;
     line-height: 80px;
     z-index: 111;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 
         .logo{
     display: flex;
     font-size: 40px;
-    font-weight: 80px;
+    font-weight: 700;
     color: var(--my-color-gris-fonce);
     letter-spacing: 3px;
     cursor: pointer;
@@ -59,20 +62,30 @@ b{
 
         .menu{
     display: flex;
+    align-items: center;
 }
 .menu li{
     margin: 0 15px;
 }
 .menu li a{
-    font-size: 25px;
+    font-size: 22px;
     color: var(--my-color-gris-fonce);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: capitalize;
+    transition: color 0.2s ease;
+}
+.reseaux{
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    margin-left: 8px;
+    border-left: 1px solid #e5e7eb;
 }
 .reseaux a{
-    font-size: 30px;
+    font-size: 26px;
     color: var(--my-color-gris-fonce);
-    margin: 25px 10px;
+    margin: 0 12px;
+    transition: color 0.2s ease;
 }
 .menu li:hover a, .reseaux a:hover{
     color: var(--my-color-jaune);
@@ -268,6 +281,7 @@ b{
             color: #FFD700;
         }
     </style>
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body>
     <nav class="entete">
@@ -276,27 +290,21 @@ b{
             <li><a href="index.html">Accueil</a></li>
             <li><a href="a propos.html">À Propos</a></li>
             <li><a href="competence.html">Compétences</a></li>
+            <li><a href="synthese.html">Synthèse</a></li>
             <li><a href="blog.html">Blog</a></li>
         </ul>
         <div class="reseaux">
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://discord.com/" target="_blank" aria-label="Discord">
-                <i class="fa-brands fa-discord"></i>
-            </a>
+            <a href="https://www.github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
         </div>
     </nav>
 
     <div class="contenu">
-        <h1>Mes Compétences</h1>
+        <h1 class="reveal">Mes Compétences</h1>
 
         <div class="competences">
             <!-- Certification IA -->
-            <div class="competence">
+            <div class="competence reveal">
                 <h2>Certification IA</h2>
                 <img src="img/CertificationIA.png" 
                      alt="Certification Intelligence Artificielle - Présentation de l'IA et des agents génératifs"
@@ -305,14 +313,14 @@ b{
             </div>
 
             <!-- Veille Technologique -->
-            <div class="competence">
+            <div class="competence reveal">
                 <h2>Veille Technologique</h2>
                 <p>Recherche et analyse des dernières innovations en robotique et technologies émergentes</p>
                 <a href="veille_robotique.html">Lire plus</a>
             </div>
 
             <!-- Certification GitHub -->
-            <div class="competence">
+            <div class="competence reveal">
                 <h2>Certification GitHub</h2>
                 <img src="img/CertificationGIT.png" 
                      alt="Certification GitHub - Introduction à Git"
@@ -323,7 +331,7 @@ b{
 
         <!-- Développement Web centré -->
         <div class="competences" style="margin-top: 40px; grid-template-columns: 1fr; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <div class="competence">
+            <div class="competence reveal">
                 <h2>Développement Web</h2>
                 <p>Maîtrise des technologies web modernes : HTML5, CSS, JavaScript , PHP et MySQL</p>
             </div>
@@ -342,11 +350,13 @@ b{
         <img src="img/CertificationGIT.png" alt="Certification GitHub agrandie">
     </div>
 
+    <button class="back-to-top" id="backToTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
     <footer class="footer">
         <p>&copy; 2025 Portfolio PAYS. Tous droits réservés. 
             <a href="#">Mentions légales</a> | 
             <a href="#">Politique de confidentialité</a>
         </p>
     </footer>
+    <script src="animations.js"></script>
 </body>
 </html>

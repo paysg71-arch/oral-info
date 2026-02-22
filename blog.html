@@ -6,6 +6,7 @@
     <title>Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 <body>
     <div class="container">
@@ -15,38 +16,40 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="a propos.html">À Propos</a></li>
                 <li><a href="competence.html">Compétences</a></li>
+                <li><a href="synthese.html">Synthèse</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </div>
             <div class="reseaux">
-                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/feed/?trk=registration-frontend"><i class="fa-brands fa-linkedin"></i></a>
-                           <a href="https://discord.com/channels/@me"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.github.com/"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
             </div>
         </nav>
 
         <div class="contenu">
-            <h1>Bienvenue sur mon Blog</h1>
-            <p>Découvrez mes derniers articles et pensées sur le développement web, le sport et la créativité.</p>
+            <h1 class="reveal">Bienvenue sur mon Blog</h1>
+            <p class="reveal">Découvrez mes derniers articles et pensées sur le développement web, le sport et la créativité.</p>
 
             <div class="articles">
-                <div class="article">
-                    <img src="img/photo7.png" alt="Article 1">
+                <div class="article reveal">
+                    <img src="img/Nanosphoto7.png" alt="Article 1">
                     <h2>Mon site E-commerce</h2>
                     <p>Venez découvrir ma création.</p>
                     <a href="http://localhost/ecommerce/vue/home.php">Lire plus</a>
                 </div>
 
-                <div class="article">
-                    <img src="img/image.png" alt="Article 2">
+                <div class="article reveal">
+                    <img src="img/Badmintonphoto.png" alt="Article 2">
                     <h2>Comment rester motivé</h2>
                     <p>Allier développement et sport booste la motivation.</p>
                     <a href="https://badmintoncarrieres-sur-seine.fr/">Lire plus</a>
                 </div>
             </div>
         </div>
+    <button class="back-to-top" id="backToTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
     </div>
            <div class="footer">
             <p>&copy; 2025 Bog. <a href="#">Mentions légales</a></p>
         </div>
+    <script src="animations.js"></script>
 </body>
 </html>

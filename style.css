@@ -24,14 +24,17 @@ body{
     display: flex;
     width: 100%;
     justify-content: space-around;
+    align-items: center;
     height: 80px;
     line-height: 80px;
     z-index: 111;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
 .logo{
     display: flex;
     font-size: 40px;
-    font-weight: 80px;
+    font-weight: 700;
     color: var(--my-color-gris-fonce);
     letter-spacing: 3px;
     cursor: pointer;
@@ -46,20 +49,30 @@ b{
 }
 .menu{
     display: flex;
+    align-items: center;
 }
 .menu li{
     margin: 0 15px;
 }
 .menu li a{
-    font-size: 25px;
+    font-size: 22px;
     color: var(--my-color-gris-fonce);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: capitalize;
+    transition: color 0.2s ease;
+}
+.reseaux{
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    margin-left: 8px;
+    border-left: 1px solid #e5e7eb;
 }
 .reseaux a{
-    font-size: 30px;
+    font-size: 26px;
     color: var(--my-color-gris-fonce);
-    margin: 25px 10px;
+    margin: 0 12px;
+    transition: color 0.2s ease;
 }
 .menu li:hover a, .reseaux a:hover{
     color: var(--my-color-jaune);
@@ -71,8 +84,7 @@ b{
     justify-content: center;
     align-items: center;
     padding: 0 10%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden; /* ← corrigé ici */
 }
 .Cgauche,   .Cdroite{
     width: 50%;
@@ -129,6 +141,7 @@ button{
 }
 button:hover{
     background-color: var(--my-color-jaune);
+    transform: translateY(-2px);
 }
 .groupImg{
     position: relative;
@@ -147,7 +160,6 @@ button:hover{
     50%{
         right: 10px;
         top: 15px;
-
     }
 }
 .groupImg #idspl{
