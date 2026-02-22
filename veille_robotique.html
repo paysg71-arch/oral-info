@@ -207,11 +207,31 @@ b{
         .domain-card p {
             color: #555;
             font-size: 1.05rem;
+            margin-bottom: 1.2rem;
         }
 
         .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+        }
+
+        /* ✅ Style corrigé pour les liens dans les cartes domaines */
+        .domain-card .domain-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.4rem 1.2rem;
+            background-color: var(--my-color-jaune);
+            color: var(--my-color-gris-fonce);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .domain-card .domain-link:hover {
+            background-color: #e6d100;
+            transform: scale(1.05);
         }
 
         footer {
@@ -284,30 +304,35 @@ b{
                     <div class="icon">🏭</div>
                     <h3>L'Industrie</h3>
                     <p>Bras robotisés dans les usines pour l'automatisation de la production.</p>
+                    <a href="https://www.kuka.com" class="domain-link" target="_blank">Kuka</a>
                 </div>
 
                 <div class="domain-card">
                     <div class="icon">🏠</div>
                     <h3>La Maison</h3>
                     <p>Aspirateurs robots et assistants domestiques intelligents.</p>
+                    <a href="https://www.irobot.com" class="domain-link" target="_blank">iRobot</a>
                 </div>
 
                 <div class="domain-card">
                     <div class="icon">⚕️</div>
                     <h3>La Médecine</h3>
                     <p>Robots qui assistent les chirurgiens lors d'opérations complexes.</p>
+                    <a href="https://www.intuitive.com" class="domain-link" target="_blank">Intuitive</a>
                 </div>
 
                 <div class="domain-card">
                     <div class="icon">🎖️</div>
                     <h3>L'Armée</h3>
                     <p>Opérations à distance et missions en terrain hostile.</p>
+                    <a href="https://www.darpa.mil" class="domain-link" target="_blank">DARPA</a>
                 </div>
 
                 <div class="domain-card">
                     <div class="icon">🔬</div>
                     <h3>La Science</h3>
                     <p>Exploration spatiale, fonds marins et recherche en laboratoire.</p>
+                    <a href="https://www.nasa.gov" class="domain-link" target="_blank">NASA</a>
                 </div>
             </div>
         </section>
