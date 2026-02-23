@@ -1,204 +1,252 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synthèse E5 - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --my-color-gris: #f0f2f6;
-            --my-color-gris-fonce: #2d3748;
-            --my-color-jaune: #eab308;
-            --my-color-jaune-clair: #fef08a;
-            --blanc: #ffffff;
-            --ombre: 0 4px 20px rgba(45, 55, 72, 0.08);
-            --ombre-hover: 0 12px 40px rgba(45, 55, 72, 0.12);
-        }
-        * { margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif; }
-        body { overflow-y: auto; overflow-x: hidden; background: linear-gradient(160deg, #f0f2f6 0%, #e8eef5 50%, #f5f3f0 100%); min-height: 100vh; }
-        .entete { display: flex; width: 100%; justify-content: space-around; align-items: center; height: 80px; line-height: 80px; z-index: 111; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-        .logo { display: flex; font-size: 40px; font-weight: 700; color: var(--my-color-gris-fonce); letter-spacing: 3px; cursor: pointer; text-transform: uppercase; }
-        .logo b { font-size: 70px; color: var(--my-color-jaune); }
-        .logo span { color: var(--my-color-jaune); }
-        .menu { display: flex; align-items: center; }
-        .menu li { margin: 0 15px; }
-        .menu li a { font-size: 22px; color: var(--my-color-gris-fonce); letter-spacing: 2px; text-transform: capitalize; transition: color 0.2s ease; }
-        .reseaux { display: flex; align-items: center; padding-left: 24px; margin-left: 8px; border-left: 1px solid #e5e7eb; }
-        .reseaux a { font-size: 26px; color: var(--my-color-gris-fonce); margin: 0 12px; transition: color 0.2s ease; }
-        .menu li:hover a, .reseaux a:hover { color: var(--my-color-jaune); }
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Synthèse E5 - Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --my-color-gris: #f0f2f6;
+                --my-color-gris-fonce: #2d3748;
+                --my-color-jaune: #eab308;
+                --my-color-jaune-clair: #fef08a;
+                --blanc: #ffffff;
+                --ombre: 0 4px 20px rgba(45, 55, 72, 0.08);
+                --ombre-hover: 0 12px 40px rgba(45, 55, 72, 0.12);
+            }
+            * { margin: 0; padding: 0; list-style: none; text-decoration: none; box-sizing: border-box; font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif; }
+            body { overflow-y: auto; overflow-x: hidden; background: linear-gradient(160deg, #f0f2f6 0%, #e8eef5 50%, #f5f3f0 100%); min-height: 100vh; }
+            .entete {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80px;
+        background: #ffffff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        z-index: 111;
+    }
 
-        .contenu { max-width: 900px; margin: 0 auto; padding: 50px 28px 80px; }
-        .hero { text-align: center; margin-bottom: 48px; }
-        .hero .badge { display: inline-block; background: var(--my-color-jaune); color: var(--my-color-gris-fonce); font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 6px 14px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; }
-        .contenu h1 { font-size: 2.25rem; font-weight: 700; color: var(--my-color-gris-fonce); margin-bottom: 12px; letter-spacing: -0.02em; line-height: 1.2; }
-        .contenu h1::after { content: ''; display: block; width: 80px; height: 4px; background: linear-gradient(90deg, var(--my-color-jaune), var(--my-color-jaune-clair)); margin: 14px auto 0; border-radius: 2px; }
-        .intro { color: #4a5568; font-size: 1.05rem; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+    .logo {
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--my-color-gris-fonce);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
 
-        .liens-synthese { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 48px; }
-        .liens-synthese a { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: var(--my-color-gris-fonce); color: #fff; border-radius: 14px; font-weight: 600; font-size: 15px; transition: all 0.25s ease; box-shadow: var(--ombre); }
-        .liens-synthese a:hover { background: var(--my-color-jaune); color: var(--my-color-gris-fonce); transform: translateY(-2px); box-shadow: var(--ombre-hover); }
-        .liens-synthese a i { font-size: 1.1em; }
+    .logo span {
+        color: var(--my-color-jaune);
+    }
 
-        .section-titre { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
-        .section-titre h2 { font-size: 1.35rem; font-weight: 700; color: var(--my-color-gris-fonce); }
-        .section-titre .ico { width: 40px; height: 40px; background: linear-gradient(135deg, var(--my-color-jaune), var(--my-color-jaune-clair)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--my-color-gris-fonce); font-size: 18px; }
+    .menu {
+        display: flex;
+    }
 
-        .competences-e5 { display: grid; gap: 20px; }
-        .bloc-competence { background: var(--blanc); border-radius: 16px; padding: 28px 28px 24px; box-shadow: var(--ombre); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; }
-        .bloc-competence:hover { transform: translateY(-4px); box-shadow: var(--ombre-hover); }
-        .bloc-competence .entete-bloc { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
-        .bloc-competence .num { flex-shrink: 0; width: 36px; height: 36px; background: linear-gradient(135deg, var(--my-color-jaune), #facc15); color: var(--my-color-gris-fonce); font-weight: 700; font-size: 1rem; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-        .bloc-competence h2 { font-size: 1.1rem; font-weight: 600; color: var(--my-color-gris-fonce); line-height: 1.4; }
-        .bloc-competence ul { color: #4a5568; font-size: 0.95rem; line-height: 1.75; padding-left: 22px; margin-bottom: 16px; }
-        .bloc-competence ul li { margin-bottom: 8px; list-style: disc; }
-        .bloc-competence .lien-preuve { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: var(--my-color-jaune); margin-top: auto; transition: gap 0.2s; }
-        .bloc-competence .lien-preuve:hover { gap: 12px; color: #ca8a04; }
+    .menu li {
+        margin: 0 15px;
+    }
 
-        .footer { background: #2c3e50; color: white; text-align: center; padding: 30px; margin-top: 80px; }
-        .footer a { color: #FFD700; text-decoration: none; margin-left: 15px; transition: color 0.3s ease; }
-        .footer a:hover { color: #ffc107; }
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px; background: #2d3748; color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 999; }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--my-color-jaune); color: #2c3e50; transform: translateY(-4px); }
-        @media (max-width: 768px) {
-            .entete { flex-direction: column; height: auto; line-height: 1.4; padding: 16px; gap: 12px; }
-            .menu { flex-direction: column; gap: 8px; text-align: center; }
-            .contenu { padding: 32px 20px 60px; }
-            .contenu h1 { font-size: 1.75rem; }
-            .bloc-competence { padding: 22px 20px 20px; }
-            .bloc-competence h2 { font-size: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav class="entete">
-        <div class="logo"><span>P</span>AYS<b>.</b></div>
-        <ul class="menu">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="a propos.html">À Propos</a></li>
-            <li><a href="competence.html">Compétences</a></li>
-            <li><a href="synthese.html">Synthèse</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-        <div class="reseaux">
-            <a href="https://www.github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    .menu li a {
+        font-size: 22px;
+        color: var(--my-color-gris-fonce);
+        letter-spacing: 2px;
+        transition: 0.3s;
+    }
+
+    .menu li:hover a {
+        color: var(--my-color-jaune);
+    }
+
+    .reseaux {
+        display: flex;
+        padding-left: 24px;
+        border-left: 1px solid #e5e7eb;
+    }
+
+    .reseaux a {
+        font-size: 26px;
+        margin: 0 12px;
+        color: var(--my-color-gris-fonce);
+        transition: 0.3s;
+    }
+
+    .reseaux a:hover {
+        color: var(--my-color-jaune);
+    }
+
+            .contenu { max-width: 900px; margin: 0 auto; padding: 50px 28px 80px; }
+            .hero { text-align: center; margin-bottom: 48px; }
+            .hero .badge { display: inline-block; background: var(--my-color-jaune); color: var(--my-color-gris-fonce); font-size: 12px; font-weight: 700; letter-spacing: 1px; padding: 6px 14px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; }
+            .contenu h1 { font-size: 2.25rem; font-weight: 700; color: var(--my-color-gris-fonce); margin-bottom: 12px; letter-spacing: -0.02em; line-height: 1.2; }
+            .contenu h1::after { content: ''; display: block; width: 80px; height: 4px; background: linear-gradient(90deg, var(--my-color-jaune), var(--my-color-jaune-clair)); margin: 14px auto 0; border-radius: 2px; }
+            .intro { color: #4a5568; font-size: 1.05rem; line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
+            .liens-synthese { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 48px; }
+            .liens-synthese a { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: var(--my-color-gris-fonce); color: #fff; border-radius: 14px; font-weight: 600; font-size: 15px; transition: all 0.25s ease; box-shadow: var(--ombre); }
+            .liens-synthese a:hover { background: var(--my-color-jaune); color: var(--my-color-gris-fonce); transform: translateY(-2px); box-shadow: var(--ombre-hover); }
+            .liens-synthese a i { font-size: 1.1em; }
+
+            .section-titre { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+            .section-titre h2 { font-size: 1.35rem; font-weight: 700; color: var(--my-color-gris-fonce); }
+            .section-titre .ico { width: 40px; height: 40px; background: linear-gradient(135deg, var(--my-color-jaune), var(--my-color-jaune-clair)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--my-color-gris-fonce); font-size: 18px; }
+
+            .competences-e5 { display: grid; gap: 20px; }
+            .bloc-competence { background: var(--blanc); border-radius: 16px; padding: 28px 28px 24px; box-shadow: var(--ombre); transition: transform 0.25s ease, box-shadow 0.25s ease; border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; }
+            .bloc-competence:hover { transform: translateY(-4px); box-shadow: var(--ombre-hover); }
+            .bloc-competence .entete-bloc { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+            .bloc-competence .num { flex-shrink: 0; width: 36px; height: 36px; background: linear-gradient(135deg, var(--my-color-jaune), #facc15); color: var(--my-color-gris-fonce); font-weight: 700; font-size: 1rem; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+            .bloc-competence h2 { font-size: 1.1rem; font-weight: 600; color: var(--my-color-gris-fonce); line-height: 1.4; }
+            .bloc-competence ul { color: #4a5568; font-size: 0.95rem; line-height: 1.75; padding-left: 22px; margin-bottom: 16px; }
+            .bloc-competence ul li { margin-bottom: 8px; list-style: disc; }
+            .bloc-competence .lien-preuve { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; color: var(--my-color-jaune); margin-top: auto; transition: gap 0.2s; }
+            .bloc-competence .lien-preuve:hover { gap: 12px; color: #ca8a04; }
+
+            .footer { background: #2c3e50; color: white; text-align: center; padding: 30px; margin-top: 80px; }
+            .footer a { color: #FFD700; text-decoration: none; margin-left: 15px; transition: color 0.3s ease; }
+            .footer a:hover { color: #ffc107; }
+            .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+            .reveal.visible { opacity: 1; transform: translateY(0); }
+            .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px; background: #2d3748; color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 999; }
+            .back-to-top.visible { opacity: 1; visibility: visible; }
+            .back-to-top:hover { background: var(--my-color-jaune); color: #2c3e50; transform: translateY(-4px); }
+            @media (max-width: 768px) {
+                .entete { flex-direction: column; height: auto; line-height: 1.4; padding: 16px; gap: 12px; }
+                .menu { flex-direction: column; gap: 8px; text-align: center; }
+                .contenu { padding: 32px 20px 60px; }
+                .contenu h1 { font-size: 1.75rem; }
+                .bloc-competence { padding: 22px 20px 20px; }
+                .bloc-competence h2 { font-size: 1rem; }
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="entete">
+            <div class="logo"><span>P</span>AYS<b>.</b></div>
+            <ul class="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="a propos.html">À Propos</a></li>
+                <li><a href="competence.html">Compétences</a></li>
+                <li><a href="synthese.html">Synthèse</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <div class="reseaux">
+                <a href="https://www.github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </nav>
+
+        <div class="contenu">
+            <section class="hero">
+                <span class="badge">Épreuve E5 · Session 2025</span>
+                <h1>Tableau de synthèse des réalisations professionnelles</h1>
+                <p class="intro">
+                    BTS Services Informatiques aux Organisations (SIO). Cette page relie le <strong>dossier</strong> de réalisations et les <strong>compétences</strong> du référentiel.
+                </p>
+            </section>
+
+            <div class="liens-synthese">
+                <a href="index.html"><i class="fa-solid fa-folder-open"></i> Dossier / Portfolio</a>
+                <a href="competence.html"><i class="fa-solid fa-lightbulb"></i> Compétences</a>
+            </div>
+
+            <div class="section-titre reveal">
+                <span class="ico"><i class="fa-solid fa-list-check"></i></span>
+                <h2>Compétences mises en œuvre</h2>
+            </div>
+            <div class="competences-e5">
+                <div class="bloc-competence reveal">
+                    <div class="entete-bloc">
+                        <span class="num">1</span>
+                        <h2>Gérer le patrimoine informatique</h2>
+                    </div>
+                    <ul>
+                        <li>Recenser et identifier les ressources numériques</li>
+                        <li>Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</li>
+                        <li>Mettre en place et vérifier les niveaux d’habilitation associés à un service</li>
+                        <li>Vérifier les conditions de la continuité d’un service informatique</li>
+                        <li>Gérer des sauvegardes</li>
+                        <li>Vérifier le respect des règles d’utilisation des ressources numériques</li>
+                    </ul>
+                    <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="bloc-competence">
+                    <div class="entete-bloc">
+                        <span class="num">2</span>
+                        <h2>Répondre aux incidents et aux demandes d’assistance et d’évolution</h2>
+                    </div>
+                    <ul>
+                        <li>Collecter, suivre et orienter des demandes</li>
+                        <li>Traiter des demandes concernant les services réseau et système, applicatifs</li>
+                        <li>Traiter des demandes concernant les applications</li>
+                    </ul>
+                    <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="bloc-competence reveal">
+                    <div class="entete-bloc">
+                        <span class="num">3</span>
+                        <h2>Développer la présence en ligne de l’organisation</h2>
+                    </div>
+                    <ul>
+                        <li>Participer à la valorisation de l’image de l’organisation sur les médias numériques (cadre juridique et enjeux économiques)</li>
+                        <li>Référencer les services en ligne et mesurer leur visibilité</li>
+                        <li>Participer à l’évolution d’un site Web exploitant les données de l’organisation</li>
+                    </ul>
+                    <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="bloc-competence">
+                    <div class="entete-bloc">
+                        <span class="num">4</span>
+                        <h2>Travailler en mode projet</h2>
+                    </div>
+                    <ul>
+                        <li>Analyser les objectifs et les modalités d’organisation d’un projet</li>
+                        <li>Planifier les activités</li>
+                        <li>Évaluer les indicateurs de suivi d’un projet et analyser les écarts</li>
+                    </ul>
+                    <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="bloc-competence reveal">
+                    <div class="entete-bloc">
+                        <span class="num">5</span>
+                        <h2>Mettre à disposition des utilisateurs un service informatique</h2>
+                    </div>
+                    <ul>
+                        <li>Réaliser les tests d’intégration et d’acceptation d’un service</li>
+                        <li>Déployer un service</li>
+                        <li>Accompagner les utilisateurs dans la mise en place d’un service</li>
+                    </ul>
+                    <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="bloc-competence">
+                    <div class="entete-bloc">
+                        <span class="num">6</span>
+                        <h2>Organiser son développement professionnel</h2>
+                    </div>
+                    <ul>
+                        <li>Mettre en place son environnement d’apprentissage personnel</li>
+                        <li>Mettre en œuvre des outils et stratégies de veille informationnelle</li>
+                        <li>Gérer son identité professionnelle</li>
+                        <li>Développer son projet professionnel</li>
+                    </ul>
+                    <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
         </div>
-    </nav>
 
-    <div class="contenu">
-        <section class="hero">
-            <span class="badge">Épreuve E5 · Session 2025</span>
-            <h1>Tableau de synthèse des réalisations professionnelles</h1>
-            <p class="intro">
-                BTS Services Informatiques aux Organisations (SIO). Cette page relie le <strong>dossier</strong> de réalisations et les <strong>compétences</strong> du référentiel.
+        <button class="back-to-top" id="backToTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
+        <footer class="footer">
+            <p>&copy; 2025 Portfolio PAYS. Tous droits réservés.
+                <a href="#">Mentions légales</a> |
+                <a href="#">Politique de confidentialité</a>
             </p>
-        </section>
-
-        <div class="liens-synthese">
-            <a href="index.html"><i class="fa-solid fa-folder-open"></i> Dossier / Portfolio</a>
-            <a href="competence.html"><i class="fa-solid fa-lightbulb"></i> Compétences</a>
-        </div>
-
-        <div class="section-titre reveal">
-            <span class="ico"><i class="fa-solid fa-list-check"></i></span>
-            <h2>Compétences mises en œuvre</h2>
-        </div>
-        <div class="competences-e5">
-            <div class="bloc-competence reveal">
-                <div class="entete-bloc">
-                    <span class="num">1</span>
-                    <h2>Gérer le patrimoine informatique</h2>
-                </div>
-                <ul>
-                    <li>Recenser et identifier les ressources numériques</li>
-                    <li>Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</li>
-                    <li>Mettre en place et vérifier les niveaux d’habilitation associés à un service</li>
-                    <li>Vérifier les conditions de la continuité d’un service informatique</li>
-                    <li>Gérer des sauvegardes</li>
-                    <li>Vérifier le respect des règles d’utilisation des ressources numériques</li>
-                </ul>
-                <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="bloc-competence">
-                <div class="entete-bloc">
-                    <span class="num">2</span>
-                    <h2>Répondre aux incidents et aux demandes d’assistance et d’évolution</h2>
-                </div>
-                <ul>
-                    <li>Collecter, suivre et orienter des demandes</li>
-                    <li>Traiter des demandes concernant les services réseau et système, applicatifs</li>
-                    <li>Traiter des demandes concernant les applications</li>
-                </ul>
-                <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="bloc-competence reveal">
-                <div class="entete-bloc">
-                    <span class="num">3</span>
-                    <h2>Développer la présence en ligne de l’organisation</h2>
-                </div>
-                <ul>
-                    <li>Participer à la valorisation de l’image de l’organisation sur les médias numériques (cadre juridique et enjeux économiques)</li>
-                    <li>Référencer les services en ligne et mesurer leur visibilité</li>
-                    <li>Participer à l’évolution d’un site Web exploitant les données de l’organisation</li>
-                </ul>
-                <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="bloc-competence">
-                <div class="entete-bloc">
-                    <span class="num">4</span>
-                    <h2>Travailler en mode projet</h2>
-                </div>
-                <ul>
-                    <li>Analyser les objectifs et les modalités d’organisation d’un projet</li>
-                    <li>Planifier les activités</li>
-                    <li>Évaluer les indicateurs de suivi d’un projet et analyser les écarts</li>
-                </ul>
-                <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="bloc-competence reveal">
-                <div class="entete-bloc">
-                    <span class="num">5</span>
-                    <h2>Mettre à disposition des utilisateurs un service informatique</h2>
-                </div>
-                <ul>
-                    <li>Réaliser les tests d’intégration et d’acceptation d’un service</li>
-                    <li>Déployer un service</li>
-                    <li>Accompagner les utilisateurs dans la mise en place d’un service</li>
-                </ul>
-                <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="bloc-competence">
-                <div class="entete-bloc">
-                    <span class="num">6</span>
-                    <h2>Organiser son développement professionnel</h2>
-                </div>
-                <ul>
-                    <li>Mettre en place son environnement d’apprentissage personnel</li>
-                    <li>Mettre en œuvre des outils et stratégies de veille informationnelle</li>
-                    <li>Gérer son identité professionnelle</li>
-                    <li>Développer son projet professionnel</li>
-                </ul>
-                <a href="competence.html" class="lien-preuve">Voir les preuves <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <button class="back-to-top" id="backToTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
-    <footer class="footer">
-        <p>&copy; 2025 Portfolio PAYS. Tous droits réservés.
-            <a href="#">Mentions légales</a> |
-            <a href="#">Politique de confidentialité</a>
-        </p>
-    </footer>
-<script>
-(function(){ var r=document.querySelectorAll('.reveal'); if(r.length&&'IntersectionObserver' in window){ var o=new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('visible'); }); },{threshold:0.1}); r.forEach(function(el,i){ el.style.transitionDelay=(i%4)*0.08+'s'; o.observe(el); }); }
-var b=document.getElementById('backToTop'); if(b){ window.addEventListener('scroll',function(){ b.classList.toggle('visible',window.scrollY>350); }); b.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); }); }
-})();
-</script>
-</body>
-</html>
+        </footer>
+    <script>
+    (function(){ var r=document.querySelectorAll('.reveal'); if(r.length&&'IntersectionObserver' in window){ var o=new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('visible'); }); },{threshold:0.1}); r.forEach(function(el,i){ el.style.transitionDelay=(i%4)*0.08+'s'; o.observe(el); }); }
+    var b=document.getElementById('backToTop'); if(b){ window.addEventListener('scroll',function(){ b.classList.toggle('visible',window.scrollY>350); }); b.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); }); }
+    })();
+    </script>
+    </body>
+    </html>

@@ -20,61 +20,62 @@ body{
     min-height: 100vh;
     background-color: var(--my-color-gris);
 }
-.entete{
+.entete {
     display: flex;
-    width: 100%;
     justify-content: space-around;
     align-items: center;
     height: 80px;
-    line-height: 80px;
-    z-index: 111;
     background: #ffffff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    z-index: 111;
 }
-.logo{
-    display: flex;
+
+.logo {
     font-size: 40px;
     font-weight: 700;
     color: var(--my-color-gris-fonce);
     letter-spacing: 3px;
-    cursor: pointer;
     text-transform: uppercase;
+    cursor: pointer;
 }
-b{
-    font-size: 70px;
-    color: #ffe800;
-}
-.logo span{
+
+.logo span {
     color: var(--my-color-jaune);
 }
-.menu{
+
+.menu {
     display: flex;
-    align-items: center;
 }
-.menu li{
+
+.menu li {
     margin: 0 15px;
 }
-.menu li a{
+
+.menu li a {
     font-size: 22px;
     color: var(--my-color-gris-fonce);
     letter-spacing: 2px;
-    text-transform: capitalize;
-    transition: color 0.2s ease;
+    transition: 0.3s;
 }
-.reseaux{
+
+.menu li:hover a {
+    color: var(--my-color-jaune);
+}
+
+.reseaux {
     display: flex;
-    align-items: center;
     padding-left: 24px;
-    margin-left: 8px;
     border-left: 1px solid #e5e7eb;
 }
-.reseaux a{
+
+.reseaux a {
     font-size: 26px;
-    color: var(--my-color-gris-fonce);
     margin: 0 12px;
-    transition: color 0.2s ease;
+    color: var(--my-color-gris-fonce);
+    transition: 0.3s;
 }
-.menu li:hover a, .reseaux a:hover{
+
+.reseaux a:hover {
     color: var(--my-color-jaune);
 }
 
