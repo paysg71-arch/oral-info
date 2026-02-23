@@ -1,372 +1,632 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique - Robotique</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-       @import url(https://fonts.googleapis.com/css?family=Tangerine:bold,bolditalic|Inconsolata:italic|Droid+Sans);
-:root {
-    --my-color-gris: #f3f5f8;
-    --my-color-gris-fonce: #3d535f;
-    --my-color-jaune: #ffe800;
-}
-*{
-    margin : 0px;
-    padding : 0px;
-    list-style-type: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;   
-}
-body{
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-.containeur{
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--my-color-gris);
-}
-        /* Navigation */
-.entete{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    height: 80px;
-    line-height: 80px;
-    z-index: 111;
-    background: #ffffff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veille Technologique – Robotique | Pays Audran</title>
 
-        .logo{
-    display: flex;
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--my-color-gris-fonce);
-    letter-spacing: 3px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-b{
-    font-size: 70px;
-    color: #ffe800;
-}
-.logo span{
-    color: var(--my-color-jaune);
-}
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
 
-        .menu{
-    display: flex;
-    align-items: center;
-}
-.menu li{
-    margin: 0 15px;
-}
-.menu li a{
-    font-size: 22px;
-    color: var(--my-color-gris-fonce);
-    letter-spacing: 2px;
-    text-transform: capitalize;
-    transition: color 0.2s ease;
-}
-.reseaux{
-    display: flex;
-    align-items: center;
-    padding-left: 24px;
-    margin-left: 8px;
-    border-left: 1px solid #e5e7eb;
-}
-.reseaux a{
-    font-size: 26px;
-    color: var(--my-color-gris-fonce);
-    margin: 0 12px;
-    transition: color 0.2s ease;
-}
-.menu li:hover a, .reseaux a:hover{
-    color: var(--my-color-jaune);
-}
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
+  <style>
+    /* ========== VARIABLES ========== */
+    :root {
+      --yellow:   #FFE500;
+      --dark:     #1c2b35;
+      --mid:      #3d535f;
+      --muted:    #7a9099;
+      --light-bg: #f4f6f8;
+      --white:    #ffffff;
+      --radius:   14px;
+      --nav-h:    72px;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
+    /* ========== BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; }
+    ::-webkit-scrollbar { display: none; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--light-bg);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; }
 
-        .nav-links a:hover {
-            color: #f1c40f;
-        }
+    /* ========== NAVBAR ========== */
+    .navbar-custom {
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      gap: 24px;
+      transition: box-shadow 0.3s;
+    }
+    .navbar-custom.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+    .navbar-custom .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: 3px;
+      color: var(--dark);
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .navbar-custom .logo span { color: var(--yellow); }
+    .logo-dot {
+      display: inline-block;
+      width: 10px; height: 10px;
+      background: var(--yellow);
+      border-radius: 50%;
+      margin-left: 2px;
+      vertical-align: middle;
+      position: relative; top: -4px;
+    }
+    .navbar-custom .nav-links {
+      display: flex; gap: 6px;
+      list-style: none;
+      margin: 0 auto;
+    }
+    .navbar-custom .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem; font-weight: 500;
+      color: var(--mid); text-decoration: none;
+      padding: 6px 14px; border-radius: 30px;
+      letter-spacing: 0.4px;
+      transition: all 0.22s ease;
+    }
+    .navbar-custom .nav-links a:hover,
+    .navbar-custom .nav-links a.active {
+      background: var(--yellow); color: var(--dark);
+    }
+    .navbar-custom .socials {
+      display: flex; gap: 10px;
+      border-left: 1px solid #e2e6ea;
+      padding-left: 20px;
+    }
+    .navbar-custom .socials a {
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; color: var(--mid);
+      font-size: 0.95rem; background: var(--light-bg);
+      transition: all 0.22s;
+    }
+    .navbar-custom .socials a:hover { background: var(--yellow); color: var(--dark); transform: translateY(-2px); }
 
-        .hero {
-            text-align: center;
-            padding: 4rem 5% 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 40px 90px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 640px; height: 640px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,229,0,0.16) 0%, transparent 70%);
+      top: -120px; right: -120px; pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 420px; height: 420px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(61,83,95,0.07) 0%, transparent 70%);
+      bottom: -80px; left: -80px; pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
 
-        h1 {
-            font-size: 3.5rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--yellow); color: var(--dark);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 30px;
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3.2rem, 9vw, 6rem);
+      color: var(--dark); line-height: 1.05;
+      position: relative; display: inline-block;
+      margin-bottom: 10px;
+    }
+    .hero h1::after {
+      content: '';
+      display: block; width: 80px; height: 5px;
+      background: var(--yellow); border-radius: 3px;
+      margin: 16px auto 0;
+    }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 660px; margin: 28px auto 36px; line-height: 1.8;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
-            height: 4px;
-            background: #f1c40f;
-        }
+    .btn-yellow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--yellow); color: var(--dark);
+      font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700;
+      padding: 13px 28px; border-radius: var(--radius);
+      border: 2px solid var(--yellow); transition: all 0.24s;
+    }
+    .btn-yellow:hover { background: transparent; color: var(--dark); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(255,229,0,0.3); }
 
-        .intro {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--dark); color: #fff;
+      font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700;
+      padding: 13px 28px; border-radius: var(--radius);
+      border: 2px solid var(--dark); transition: all 0.24s;
+    }
+    .btn-dark:hover { background: var(--yellow); border-color: var(--yellow); color: var(--dark); transform: translateY(-2px); }
 
-        .intro p {
-            font-size: 1.15rem;
-            margin-bottom: 1.5rem;
-            color: #34495e;
-        }
+    .scroll-down {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: #aab4bb; font-size: 0.7rem;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      font-family: 'Syne', sans-serif;
+      animation: bounce 2s infinite; cursor: pointer; z-index: 2;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(7px); }
+    }
 
-        .definition {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin: 2rem 0;
-        }
+    /* ========== SECTIONS ========== */
+    .section-pad { padding: 88px 0; }
+    .section-alt  { background: var(--white); }
 
-        .definition h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,229,0,0.15);
+      border: 1px solid rgba(255,229,0,0.4);
+      color: var(--mid); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 30px; margin-bottom: 14px;
+    }
+    .section-tag::before {
+      content: ''; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--yellow);
+    }
+    .section-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--dark);
+      position: relative; display: inline-block; margin-bottom: 8px;
+    }
+    .section-title::after {
+      content: ''; display: block;
+      width: 44px; height: 4px;
+      background: var(--yellow); border-radius: 2px; margin-top: 10px;
+    }
+    .section-sub {
+      font-size: 0.97rem; color: var(--muted);
+      max-width: 660px; line-height: 1.78;
+      margin-top: 18px; margin-bottom: 44px;
+    }
 
-        .perspectives {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
+    /* ========== DEF CARD ========== */
+    .def-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(28,43,53,0.08);
+      padding: 36px 32px;
+      border-left: 5px solid var(--yellow);
+      transition: box-shadow 0.28s;
+      height: 100%;
+    }
+    .def-card:hover { box-shadow: 0 14px 44px rgba(28,43,53,0.13); }
+    .def-card h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1.1rem; color: var(--dark);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .def-card h3 i { color: var(--yellow); }
+    .def-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.78; }
+    .def-card p + p { margin-top: 14px; }
 
-        .perspective-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
+    /* ========== PERSPECTIVE CARDS ========== */
+    .perspective-card {
+      border-radius: 20px; padding: 34px 26px;
+      color: white; text-align: center; height: 100%;
+      transition: transform 0.28s, box-shadow 0.28s;
+      position: relative; overflow: hidden;
+    }
+    .perspective-card::before {
+      content: ''; position: absolute;
+      top: -40px; right: -40px;
+      width: 130px; height: 130px; border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .perspective-card:hover { transform: translateY(-6px); box-shadow: 0 18px 44px rgba(28,43,53,0.18); }
+    .perspective-card.physical { background: linear-gradient(135deg, #3d535f 0%, #1c2b35 100%); }
+    .perspective-card.virtual  { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .perspective-card .p-icon  { font-size: 2.8rem; margin-bottom: 16px; display: block; }
+    .perspective-card h4 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1.05rem; margin-bottom: 10px;
+    }
+    .perspective-card p { font-size: 0.87rem; opacity: 0.82; line-height: 1.65; }
 
-        .perspective-card h4 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
+    /* ========== DOMAIN CARDS ========== */
+    .domain-card {
+      background: var(--white); border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(28,43,53,0.07);
+      padding: 36px 22px 28px; text-align: center; height: 100%;
+      border-top: 3px solid transparent;
+      transition: transform 0.28s, box-shadow 0.28s, border-color 0.22s;
+    }
+    .domain-card:hover {
+      transform: translateY(-7px); box-shadow: 0 18px 48px rgba(28,43,53,0.13);
+      border-top-color: var(--yellow);
+    }
+    .domain-icon { font-size: 3rem; margin-bottom: 18px; display: block; transition: transform 0.28s; }
+    .domain-card:hover .domain-icon { transform: scale(1.15); }
+    .domain-card h3 {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1.05rem; color: var(--dark); margin-bottom: 12px;
+    }
+    .domain-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
 
-        .domains {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 5%;
-        }
+    .domain-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 20px;
+      background: var(--yellow); color: var(--dark);
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.8rem;
+      border-radius: 30px;
+      transition: all 0.22s;
+    }
+    .domain-link:hover { background: var(--dark); color: var(--yellow); transform: scale(1.05); }
 
-        .domains h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 3rem;
-        }
+    /* ========== SOURCES ========== */
+    .source-item {
+      background: var(--white); border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(28,43,53,0.06);
+      padding: 18px 22px;
+      display: flex; align-items: center; gap: 16px;
+      border-left: 3px solid transparent;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+    }
+    .source-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(28,43,53,0.1);
+      border-left-color: var(--yellow);
+    }
+    .stack-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .dot-blue   { background: #3d7fff; }
+    .dot-green  { background: #00c47a; }
+    .dot-purple { background: #764ba2; }
+    .dot-orange { background: #ffb347; }
+    .dot-red    { background: #e74c3c; }
 
-        .domains-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
+    .source-name { font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--dark); }
+    .source-type { font-size: 0.75rem; color: #aab4bb; margin-top: 2px; }
 
-        .domain-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 36px 40px;
+      text-align: center;
+    }
+    footer .footer-divider {
+      width: 40px; height: 3px;
+      background: var(--yellow); border-radius: 2px;
+      margin: 0 auto 16px;
+    }
+    footer p { font-size: 0.86rem; line-height: 2; }
+    footer a { color: var(--yellow); font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
 
-        .domain-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
+    /* ========== BACK TO TOP ========== */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 46px; height: 46px;
+      background: var(--yellow); color: var(--dark);
+      border: none; border-radius: 50%;
+      font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(255,229,0,0.35);
+      opacity: 0; visibility: hidden;
+      transition: all 0.3s; z-index: 999;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background: var(--dark); color: var(--yellow); transform: translateY(-3px); }
 
-        .domain-card h3 {
-            color: #2c3e50;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
+    /* ========== ANIMATIONS ========== */
+    .fade-up {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        .domain-card p {
-            color: #555;
-            font-size: 1.05rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* ✅ Style corrigé pour les liens dans les cartes domaines */
-        .domain-card .domain-link {
-            display: inline-block;
-            margin-top: 0.5rem;
-            padding: 0.4rem 1.2rem;
-            background-color: var(--my-color-jaune);
-            color: var(--my-color-gris-fonce);
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .domain-card .domain-link:hover {
-            background-color: #e6d100;
-            transform: scale(1.05);
-        }
-
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                gap: 1.5rem;
-            }
-
-            .domains-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .back-to-top { position: fixed; bottom: 28px; right: 28px; width: 48px; height: 48px; background: #3d535f; color: #fff; border: none; border-radius: 50%; cursor: pointer; font-size: 1.3rem; box-shadow: 0 4px 18px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s, transform 0.3s; z-index: 999; }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: #ffe800; color: #3d535f; transform: translateY(-4px); }
-    </style>
-    <link rel="stylesheet" href="animations.css">
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 991px) {
+      .navbar-custom { padding: 0 20px; }
+      .navbar-custom .nav-links { display: none; }
+    }
+    @media (max-width: 767px) {
+      .hero { padding: 110px 24px 80px; }
+      footer { padding: 28px 20px; }
+    }
+  </style>
 </head>
+
 <body>
-<header class="entete">
-        <div class="logo"><span>P</span>AYS<b>.</b></div>
-        <ul class="menu">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="a propos.html">A Propos</a></li>
-            <li><a href="competence.html">Compétences</a></li>
-            <li><a href="synthese.html">Synthèse</a></li>
-            <li><a href="blog.html">Blog</a></li>
-        </ul>
-        <div class="reseaux">
-            <a href="https://www.github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar-custom" id="navbar">
+    <a href="index.html" class="logo"><span>P</span>ays<span class="logo-dot"></span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a propos.html">À Propos</a></li>
+      <li><a href="competence.html">Compétences</a></li>
+      <li><a href="synthese.html">Synthèse</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+    <div class="socials">
+      <a href="https://www.github.com/" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="accueil">
+    <div class="hero-inner fade-up visible">
+      <div class="hero-eyebrow"><i class="fa-solid fa-satellite-dish"></i> BTS SIO · Veille Technologique · 2025</div>
+      <h1>Robotique</h1>
+      <p class="hero-sub">Découvrez les avancées, les domaines d'application et les enjeux de la robotique — un secteur qui redéfinit notre rapport aux machines et au travail.</p>
+      <div class="hero-btns">
+        <a href="#definition" class="btn-yellow"><i class="fa-solid fa-book-open"></i> Lire la veille</a>
+        <a href="#domaines" class="btn-dark"><i class="fa-solid fa-robot"></i> Domaines</a>
+      </div>
+    </div>
+    <div class="scroll-down" onclick="document.getElementById('definition').scrollIntoView({behavior:'smooth'})">
+      <span>Défiler</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== DÉFINITION ===== -->
+  <section class="section-pad section-alt" id="definition">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-tag">01 · Définition</div>
+        <h2 class="section-title">Qu'est-ce que la robotique ?</h2>
+        <p class="section-sub">Pour ma veille technologique, j'ai choisi de m'intéresser à la <strong>robotique</strong>, un domaine en pleine évolution qui transforme profondément notre société et nos modes de production.</p>
+      </div>
+
+      <div class="row g-4 fade-up">
+        <div class="col-lg-7">
+          <div class="def-card">
+            <h3><i class="fa-solid fa-circle-info"></i> Définition formelle</h3>
+            <p>La robotique regroupe toutes les techniques utilisées pour concevoir et fabriquer des machines automatiques, qu'on appelle des robots. Selon l'ATILF, un robot est un appareil capable d'accomplir une tâche précise grâce à un système de commande automatique, dans des domaines variés.</p>
+            <p>Elle se situe à la croisée de plusieurs disciplines : mécanique, électronique, informatique, intelligence artificielle et sciences cognitives.</p>
+          </div>
         </div>
-    </header>
-
-    <main>
-        <section class="hero reveal" id="accueil">
-            <h1>Veille Technologique : Robotique</h1>
-        </section>
-
-        <section class="intro reveal" id="definition">
-            <p>Pour ma veille technologique, j'ai choisi de m'intéresser à la <strong>robotique</strong>, un domaine en pleine évolution.</p>
-            
-            <div class="definition">
-                <h3>Qu'est-ce que la robotique ?</h3>
-                <p>La robotique regroupe toutes les techniques utilisées pour concevoir et fabriquer des machines automatiques, qu'on appelle des robots. Selon l'ATILF, un robot est un appareil capable d'accomplir une tâche précise grâce à un système de commande automatique, dans des domaines variés.</p>
+        <div class="col-lg-5">
+          <div class="row g-4 h-100">
+            <div class="col-12">
+              <div class="perspective-card physical">
+                <span class="p-icon">🤖</span>
+                <h4>Machine Physique</h4>
+                <p>Équipée de capteurs, d'actionneurs et de composants matériels pour interagir avec le monde réel.</p>
+              </div>
             </div>
-
-            <p style="font-size: 1.2rem; font-weight: 500; margin: 2rem 0;">On peut donc voir le robot de deux façons :</p>
-            
-            <div class="perspectives">
-                <div class="perspective-card">
-                    <h4>🤖 Machine Physique</h4>
-                    <p>Équipée de capteurs et de composants matériels</p>
-                </div>
-                <div class="perspective-card">
-                    <h4>💻 Robot Virtuel</h4>
-                    <p>Comme les bots informatiques</p>
-                </div>
+            <div class="col-12">
+              <div class="perspective-card virtual">
+                <span class="p-icon">💻</span>
+                <h4>Robot Virtuel (Bot)</h4>
+                <p>Logiciels autonomes capables d'exécuter des tâches répétitives sur des systèmes informatiques.</p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section class="domains" id="domaines">
-            <h2>Domaines d'Application</h2>
-            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.15rem; color: #555;">Aujourd'hui, la robotique est présente dans de nombreux secteurs :</p>
-            
-            <div class="domains-grid">
-                <div class="domain-card reveal">
-                    <div class="icon">🏭</div>
-                    <h3>L'Industrie</h3>
-                    <p>Bras robotisés dans les usines pour l'automatisation de la production.</p>
-                    <a href="https://www.kuka.com" class="domain-link" target="_blank">Kuka</a>
-                </div>
+  <!-- ===== DOMAINES ===== -->
+  <section class="section-pad" id="domaines">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-tag">02 · Applications</div>
+        <h2 class="section-title">Domaines d'application</h2>
+        <p class="section-sub">Aujourd'hui, la robotique est présente dans de nombreux secteurs de la société, révolutionnant les méthodes de travail et ouvrant de nouvelles possibilités.</p>
+      </div>
 
-                <div class="domain-card reveal">
-                    <div class="icon">🏠</div>
-                    <h3>La Maison</h3>
-                    <p>Aspirateurs robots et assistants domestiques intelligents.</p>
-                    <a href="https://www.irobot.com" class="domain-link" target="_blank">iRobot</a>
-                </div>
+      <div class="row g-4 fade-up">
+        <div class="col-sm-6 col-lg-4">
+          <div class="domain-card">
+            <span class="domain-icon">🏭</span>
+            <h3>L'Industrie</h3>
+            <p>Bras robotisés dans les usines pour l'automatisation de la production, soudage, assemblage et contrôle qualité.</p>
+            <a href="https://www.kuka.com" target="_blank" class="domain-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Kuka
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="domain-card">
+            <span class="domain-icon">🏠</span>
+            <h3>La Maison</h3>
+            <p>Aspirateurs robots, assistants domestiques intelligents et systèmes domotiques automatisés.</p>
+            <a href="https://www.irobot.com" target="_blank" class="domain-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> iRobot
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="domain-card">
+            <span class="domain-icon">⚕️</span>
+            <h3>La Médecine</h3>
+            <p>Robots chirurgicaux qui assistent les médecins lors d'opérations complexes avec une précision millimétrique.</p>
+            <a href="https://www.intuitive.com" target="_blank" class="domain-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Intuitive
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="domain-card">
+            <span class="domain-icon">🎖️</span>
+            <h3>L'Armée</h3>
+            <p>Drones, robots démineurs et systèmes autonomes pour des opérations à distance en terrain hostile.</p>
+            <a href="https://www.darpa.mil" target="_blank" class="domain-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> DARPA
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="domain-card">
+            <span class="domain-icon">🔬</span>
+            <h3>La Science</h3>
+            <p>Exploration spatiale, fonds marins, laboratoires : les robots repoussent les frontières de la connaissance.</p>
+            <a href="https://www.nasa.gov" target="_blank" class="domain-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> NASA
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="domain-card">
+            <span class="domain-icon">🚗</span>
+            <h3>L'Automobile</h3>
+            <p>Véhicules autonomes, systèmes d'aide à la conduite et lignes d'assemblage entièrement robotisées.</p>
+            <a href="https://www.tesla.com" target="_blank" class="domain-link">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Tesla
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="domain-card reveal">
-                    <div class="icon">⚕️</div>
-                    <h3>La Médecine</h3>
-                    <p>Robots qui assistent les chirurgiens lors d'opérations complexes.</p>
-                    <a href="https://www.intuitive.com" class="domain-link" target="_blank">Intuitive</a>
-                </div>
+  <!-- ===== SOURCES ===== -->
+  <section class="section-pad section-alt" id="sources">
+    <div class="container">
+      <div class="fade-up">
+        <div class="section-tag">03 · Méthodologie</div>
+        <h2 class="section-title">Sources de veille</h2>
+        <p class="section-sub">Afin d'assurer une veille régulière et fiable, j'ai utilisé un ensemble de sources diversifiées couvrant actualités, publications académiques et blogs spécialisés.</p>
+      </div>
 
-                <div class="domain-card reveal">
-                    <div class="icon">🎖️</div>
-                    <h3>L'Armée</h3>
-                    <p>Opérations à distance et missions en terrain hostile.</p>
-                    <a href="https://www.darpa.mil" class="domain-link" target="_blank">DARPA</a>
-                </div>
+      <div class="row g-3 fade-up">
+        <div class="col-sm-6 col-lg-4">
+          <div class="source-item">
+            <div class="stack-dot dot-blue"></div>
+            <div><div class="source-name">IEEE Spectrum</div><div class="source-type">Revue académique</div></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="source-item">
+            <div class="stack-dot dot-green"></div>
+            <div><div class="source-name">MIT Technology Review</div><div class="source-type">Actualité tech</div></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="source-item">
+            <div class="stack-dot dot-purple"></div>
+            <div><div class="source-name">Robotics Business Review</div><div class="source-type">Presse spécialisée</div></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="source-item">
+            <div class="stack-dot dot-orange"></div>
+            <div><div class="source-name">Google Alertes</div><div class="source-type">Veille automatisée</div></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="source-item">
+            <div class="stack-dot dot-red"></div>
+            <div><div class="source-name">YouTube — Boston Dynamics</div><div class="source-type">Vidéos / démos</div></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="source-item">
+            <div class="stack-dot dot-blue"></div>
+            <div><div class="source-name">ATILF / Encyclopédies</div><div class="source-type">Référence lexicale</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="domain-card reveal">
-                    <div class="icon">🔬</div>
-                    <h3>La Science</h3>
-                    <p>Exploration spatiale, fonds marins et recherche en laboratoire.</p>
-                    <a href="https://www.nasa.gov" class="domain-link" target="_blank">NASA</a>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-divider"></div>
+    <p>BTS SIO · Veille Technologique Robotique · Session 2025</p>
+    <p>Pays Audran — N° 02542532580 — <a href="index.html">Insta Paris</a></p>
+  </footer>
 
-    <button class="back-to-top" id="backToTop" title="Retour en haut" aria-label="Retour en haut">↑</button>
-    <footer id="contact">
-        <p>&copy; 2025 PAYS - Veille Technologique Robotique</p>
-    </footer>
-    <script src="animations.js"></script>
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" title="Retour en haut">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50));
+
+    // Back to top
+    const btn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Smooth scroll on anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => {
+      if (!el.classList.contains('visible')) obs.observe(el);
+    });
+
+    // Active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 100) current = sec.id; });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
