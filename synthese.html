@@ -47,28 +47,115 @@
         </p>
       </div>
 
-      <!-- CTA Links -->
+      <!-- CTA Links (Quick nav) -->
       <div class="cta-links reveal">
-        <a href="presentation_fleet.html" class="cta-link-primary">
-          <i class="fa-solid fa-car"></i> Fiche Fleet Manager
+        <a href="#fiche-fleet" class="cta-link-primary">
+          <i class="fa-solid fa-car"></i> Fleet Manager
         </a>
-        <a href="presentation_nanos.html" class="cta-link-primary" style="background: var(--yellow); color: var(--dark); border-color: var(--yellow);">
-          <i class="fa-solid fa-cart-shopping"></i> Fiche E-commerce (Nanos)
+        <a href="#fiche-nanos" class="cta-link-primary highlight">
+          <i class="fa-solid fa-cart-shopping"></i> E-commerce (Nanos)
         </a>
-        <a href="competence.html" class="cta-link-outline">
-          <i class="fa-solid fa-lightbulb"></i> Compétences
+        <a href="#competences-grid" class="cta-link-outline">
+          <i class="fa-solid fa-list-check"></i> Grille Compétences
         </a>
       </div>
 
+      <hr class="gradient-divider reveal" style="margin: 60px 0; opacity: 0.3;">
+
+      <!-- ===== FICHE FLEET MANAGER ===== -->
+      <div id="fiche-fleet" class="reveal section-pad pt-0">
+        <div class="hero-presentation">
+          <div class="hero-tags">
+            <span class="hero-tag">Windows Forms / WPF</span>
+            <span class="hero-tag">C# .NET</span>
+            <span class="hero-tag">MySQL</span>
+          </div>
+          <h1>Fleet Manager</h1>
+          <p class="subtitle">Conception & développement d'une plateforme métier de gestion de flotte automobile (Lourd).</p>
+          <div class="hero-links">
+            <a href="https://github.com/paysg71-arch/fleet_manager" target="_blank" class="btn-dark"><i class="fa-brands fa-github"></i> Accéder au repo GitHub</a>
+            <a href="documents/Fiche_Presentation_FleetManager.pdf" target="_blank" class="btn-outline-custom"><i class="fa-solid fa-file-pdf"></i> Fiche d'examen E5 complète (PDF)</a>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <div class="feature-card-p">
+              <div class="feature-icon"><i class="fa-solid fa-car"></i></div>
+              <h3>Gestion des véhicules</h3>
+              <p>Suivi du cycle de vie, alertes d'expiration automatiques et contrôle technique.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card-p">
+              <div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+              <h3>Conducteurs</h3>
+              <p>Affectation RH, suivi des permis et historique multi-dimensionnel.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card-p">
+              <div class="feature-icon"><i class="fa-solid fa-database"></i></div>
+              <h3>Architecture N-Tiers</h3>
+              <p>Séparation DAL (EF/ADO) et BLL (Métier). Moteur de BDD MySQL.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="gradient-divider reveal" style="margin: 60px 0; opacity: 0.3;">
+
+      <!-- ===== FICHE NANOS E-COMMERCE ===== -->
+      <div id="fiche-nanos" class="reveal section-pad pt-0">
+        <div class="hero-presentation">
+          <div class="hero-tags">
+            <span class="hero-tag">PHP 8</span>
+            <span class="hero-tag">HTML/CSS/JS Bootstrap</span>
+            <span class="hero-tag">MySQL WAMP</span>
+          </div>
+          <h1>Nanos E-commerce</h1>
+          <p class="subtitle">Développement d'un site web transactionnel complet (Web) pour la vente de vêtements.</p>
+          <div class="hero-links">
+            <a href="https://github.com/paysg71-arch/ecommerce" target="_blank" class="btn-dark"><i class="fa-brands fa-github"></i> Accéder au repo GitHub</a>
+            <a href="documents/Fiche_Presentation_Nanos.pdf" target="_blank" class="btn-outline-custom"><i class="fa-solid fa-file-pdf"></i> Fiche d'examen E5 complète (PDF)</a>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <div class="feature-card-p">
+              <div class="feature-icon"><i class="fa-solid fa-shirt"></i></div>
+              <h3>Boutique & Catalogue</h3>
+              <p>Filtrage dynamique, gestion du panier et sessions clients sécurisées PHP.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card-p">
+              <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <h3>Back-Office Admin</h3>
+              <p>Zone protégée : CRUD intégral sur les articles, stocks et membres du site.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card-p">
+              <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+              <h3>Transactions</h3>
+              <p>Processus d'inscription, hashage, checkout et enregistrement de commandes finalisées.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="gradient-divider reveal" style="margin: 60px 0; opacity: 0.3;">
+
       <!-- Section label -->
-      <div class="section-label reveal">
+      <div class="section-label reveal" id="competences-grid">
         <div class="icon-wrap"><i class="fa-solid fa-list-check"></i></div>
-        <h2>Compétences mises en œuvre</h2>
+        <h2>Grille des Compétences Mises en Œuvre</h2>
       </div>
 
       <!-- Grid -->
       <div class="row g-4">
-
         <!-- Bloc 1 -->
         <div class="col-md-6 reveal">
           <div class="bloc-competence">
