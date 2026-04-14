@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* =========================================================================
+   STYLE.CSS — Point d'entrée unique
+   Importe tous les fichiers CSS de ce dossier
+   ========================================================================= */
+
+/* 1. Design System & Composants Globaux */
+@import url('global.css');
+
+/* 2. Pages individuelles */
+@import url('index.css');        /* Accueil */
+@import url('apropos.css');      /* À Propos */
+@import url('competence.css');   /* Compétences */
+@import url('synthese.css');     /* Synthèse E5 */
+@import url('blog.css');        /* Blog */
+@import url('veille.css');      /* Veille Technologique */
+@import url('projets.css');     /* Fleet Manager & Nanos */
