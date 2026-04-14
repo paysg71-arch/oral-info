@@ -135,14 +135,14 @@
 @keyframes pulseBlob { 0% { transform: scale(1); } 100% { transform: scale(1.3); } }
 
 .info-strip .strip-text h4 {
-  font-family: var(--font-head); font-weight: 800; font-size: 1.5rem;
+  font-family: var(--font-head); font-weight: 800; font-size: 1.3rem;
   color: var(--text-main); margin-bottom: 10px; text-shadow: 0 5px 15px rgba(0,0,0,0.8);
 }
 .info-strip .strip-text p { font-size: 1rem; color: var(--mid); font-weight: 500; }
 .strip-stats { display: flex; gap: 40px; flex-wrap: wrap; position: relative; z-index: 2; }
 .strip-stat { text-align: center; }
 .strip-stat .num {
-  font-family: var(--font-head); font-weight: 800; font-size: 2.8rem;
+  font-family: var(--font-head); font-weight: 800; font-size: 2.2rem;
   color: var(--yellow); line-height: 1; text-shadow: 0 0 20px rgba(255,229,0,0.5);
   animation: glowNum 2s infinite alternate;
 }

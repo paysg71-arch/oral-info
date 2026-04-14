@@ -11,10 +11,10 @@
 }
 .hero-presentation h1 {
   font-family: var(--font-head); font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  color: var(--text-main); line-height: 1.1; margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-main); line-height: 1.1; margin-bottom: 18px;
   text-shadow: 0 10px 20px rgba(0,0,0,0.8), 0 0 30px rgba(255,255,255,0.1);
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 .hero-presentation h1::after {
   content: ''; display: block; width: 60px; height: 6px;

@@ -83,8 +83,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .navbar-custom .logo {
-  font-family: var(--font-head); font-weight: 800; font-size: 1.65rem;
-  letter-spacing: 4px; color: var(--text-main);
+  font-family: var(--font-head); font-weight: 800; font-size: 1.4rem;
+  letter-spacing: 3px; color: var(--text-main);
   text-transform: uppercase; white-space: nowrap;
   text-shadow: 0 0 15px rgba(255,255,255,0.3);
   position: relative;
@@ -105,28 +105,22 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .navbar-custom .nav-links {
-  display: flex; gap: 10px; list-style: none; margin: 0 auto;
+  display: flex; gap: 6px; list-style: none; margin: 0 auto;
 }
+.navbar-custom .nav-links li { display: flex; }
 .navbar-custom .nav-links a {
-  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
-  color: var(--mid); padding: 8px 20px;
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  color: var(--mid); padding: 10px 22px;
   border-radius: 30px; letter-spacing: 0.5px;
-  position: relative; overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
   border: 1px solid transparent;
+  cursor: pointer; display: block; position: relative; z-index: 2;
 }
-.navbar-custom .nav-links a::before {
-  content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,229,0,0.2), transparent);
-  transition: all 0.4s;
-}
-.navbar-custom .nav-links a:hover::before { left: 100%; }
 .navbar-custom .nav-links a:hover,
 .navbar-custom .nav-links a.active {
   background: rgba(255,229,0,0.1); color: var(--yellow);
   border-color: rgba(255,229,0,0.3);
-  box-shadow: 0 0 20px var(--yellow-glare) inset, 0 0 15px var(--yellow-glare);
-  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--yellow-glare) inset;
 }
 
 .navbar-custom .socials {
@@ -206,10 +200,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .page-header h1 {
   font-family: var(--font-head); font-weight: 800;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  color: var(--text-main); line-height: 1.1; margin-bottom: 20px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--text-main); line-height: 1.15; margin-bottom: 18px;
   text-shadow: 0 10px 30px rgba(0,0,0,0.8);
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
 }
 .page-header h1::after {
   content: ''; display: block; width: 80px; height: 6px;
@@ -224,8 +218,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .page-header .subtitle {
-  font-size: 1.1rem; color: var(--mid); max-width: 600px;
-  margin: 0 auto; line-height: 1.8;
+  font-size: 0.95rem; color: var(--mid); max-width: 600px;
+  margin: 0 auto; line-height: 1.7;
   font-weight: 400;
 }
 
@@ -251,7 +245,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* Section titles */
 .section-title {
   font-family: var(--font-head); font-weight: 800;
-  font-size: clamp(2rem, 4vw, 2.8rem); color: var(--text-main);
+  font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--text-main);
   display: inline-block; margin-bottom: 12px;
   position: relative;
 }
