@@ -2,6 +2,8 @@
    SYNTHESE.CSS — Page Synthèse E5 (ABUSED UI/UX EDITION)
    ========================================================================= */
 
+.synthese-container { max-width: 960px; position: relative; z-index: 1; }
+.pt-0 { padding-top: 0 !important; }
 /* CTA Links (Fiches Fleet, Nanos, Compétences) */
 .cta-links {
   display: flex; gap: 20px; justify-content: center;

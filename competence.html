@@ -128,22 +128,22 @@
             </div>
           </div>
           <div class="col-lg-5 d-flex justify-content-center">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; max-width: 280px;">
-              <div style="background:rgba(255,255,255,0.06); border-radius:16px; padding:20px; text-align:center;">
-                <div style="font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:var(--yellow);">2+</div>
-                <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:4px;">Ans de pratique</div>
+            <div class="stats-grid">
+              <div class="stat-box">
+                <div class="stat-box-num">2+</div>
+                <div class="stat-box-lbl">Ans de pratique</div>
               </div>
-              <div style="background:rgba(255,255,255,0.06); border-radius:16px; padding:20px; text-align:center;">
-                <div style="font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:var(--yellow);">12+</div>
-                <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:4px;">Projets web</div>
+              <div class="stat-box">
+                <div class="stat-box-num">12+</div>
+                <div class="stat-box-lbl">Projets web</div>
               </div>
-              <div style="background:rgba(255,255,255,0.06); border-radius:16px; padding:20px; text-align:center;">
-                <div style="font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:var(--yellow);">6</div>
-                <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:4px;">Technologies</div>
+              <div class="stat-box">
+                <div class="stat-box-num">6</div>
+                <div class="stat-box-lbl">Technologies</div>
               </div>
-              <div style="background:rgba(255,255,255,0.06); border-radius:16px; padding:20px; text-align:center;">
-                <div style="font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:var(--yellow);">2</div>
-                <div style="font-size:0.78rem; color:rgba(255,255,255,0.5); margin-top:4px;">Certifications</div>
+              <div class="stat-box">
+                <div class="stat-box-num">2</div>
+                <div class="stat-box-lbl">Certifications</div>
               </div>
             </div>
           </div>
@@ -204,6 +204,15 @@
         });
       }
     });
+
+    // Reveal on scroll
+    const anim = document.querySelectorAll('.fade-up, .fade-right');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+      }, { threshold: 0.08 });
+      anim.forEach(el => obs.observe(el));
+    } else { anim.forEach(el => el.classList.add('visible')); }
 
     // Back to top
     const btn = document.getElementById('backToTop');

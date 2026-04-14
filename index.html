@@ -156,6 +156,15 @@
       backDelay: 1800,
     });
 
+    // Reveal on scroll
+    const anim = document.querySelectorAll('.fade-up, .fade-right');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+      }, { threshold: 0.08 });
+      anim.forEach(el => obs.observe(el));
+    } else { anim.forEach(el => el.classList.add('visible')); }
+
     // Back to top
     const btn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
