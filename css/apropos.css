@@ -50,10 +50,10 @@
 
 /* Text  */
 .about-text h2 {
-  font-family: var(--font-head); font-weight: 800; font-size: 2.2rem;
+  font-family: var(--font-head); font-weight: 800; font-size: 2rem;
   color: var(--text-main); margin-bottom: 20px; text-shadow: 0 5px 15px rgba(0,0,0,0.8);
 }
-.about-text .bio { font-size: 1.05rem; color: var(--mid); line-height: 1.9; margin-bottom: 30px; font-weight: 400; }
+.about-text .bio { font-size: 1rem; color: var(--mid); line-height: 1.8; margin-bottom: 30px; font-weight: 400; }
 .about-text strong { color: var(--yellow); text-shadow: 0 0 10px rgba(255,229,0,0.4); }
 
 /* Skills pills ABUSED */

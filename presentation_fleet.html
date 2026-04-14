@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fleet Manager ‘«ˆ R+Æalisation E5 | Pays Audran</title>
+  <title>Fleet Manager ‚Äî R√©alisation E5 | Pays Audran</title>
 
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -30,8 +30,8 @@
       <li><a href="#productions">Productions</a></li>
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="#stack">Stack</a></li>
-      <li><a href="#resultats">R+Æsultats</a></li>
-      <li><a href="#acces">Acc+øs</a></li>
+      <li><a href="#resultats">R√©sultats</a></li>
+      <li><a href="#acces">Acc√®s</a></li>
     </ul>
     <div class="socials">
       <a href="https://github.com/paysg71-arch/fleet_manager" target="_blank" aria-label="GitHub"><i
@@ -39,77 +39,51 @@
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero-inner fade-up visible">
-      <div class="hero-eyebrow"><i class="fa-solid fa-graduation-cap"></i> BTS SIO -¿ SLAM -¿ +Îpreuve E5 -¿ Session 2025
-      </div>
-      <h1>Fleet Manager</h1>
-      <p class="hero-sub">Conception & d+Æveloppement d'une plateforme de gestion de flotte automobile ‘«ˆ R+Æalisation
-        professionnelle pr+Æsent+Æe au jury E5.</p>
-
-      <div class="meta-badges">
-        <div class="meta-badge"><small>Candidat</small>Pays Audran</div>
-        <div class="meta-badge"><small>N-¶ Candidat</small>02542532580</div>
-        <div class="meta-badge"><small>Organisation</small>Insta Paris</div>
-        <div class="meta-badge"><small>P+Æriode</small>2024 ‘«Ù 2026</div>
-        <div class="meta-badge"><small>Date</small>22 / 02 / 2026</div>
-      </div>
-
-      <div class="hero-btns">
-        <a href="#objectif" class="btn-yellow"><i class="fa-solid fa-arrow-down"></i> D+Æcouvrir le projet</a>
-        <a href="https://github.com/paysg71-arch" target="_blank" class="btn-dark"><i class="fa-brands fa-github"></i>
-          GitHub</a>
-      </div>
-    </div>
-
-    <div class="scroll-down" onclick="document.getElementById('objectif').scrollIntoView({behavior:'smooth'})">
-      <span>D+Æfiler</span>
-      <i class="fa-solid fa-chevron-down"></i>
-    </div>
-  </section>
-
-  <!-- ===== OBJECTIF ===== -->
-  <section class="section-pad" id="objectif">
+  <!-- ===== HERO & R√âSUM√â ===== -->
+  <section class="section-pad pt-0" style="margin-top: 100px;" id="objectif">
     <div class="container">
-      <div class="fade-up">
-        <div class="section-tag">01 -¿ Objectif</div>
-        <h2 class="section-title">Contexte du projet</h2>
-        <p class="section-sub">L'application vise +· automatiser le suivi op+Ærationnel d'un parc automobile. Elle
-          centralise les informations techniques des v+Æhicules, g+øre l'affectation des conducteurs et planifie les
-          op+Ærations de maintenance.</p>
+      <div class="hero-presentation fade-up">
+        <div class="hero-tags">
+          <span class="hero-tag">Windows Forms / WPF</span>
+          <span class="hero-tag">C# .NET</span>
+          <span class="hero-tag">MySQL</span>
+        </div>
+        <h1>Fleet Manager</h1>
+        <p class="subtitle">Conception & d√©veloppement d'une plateforme m√©tier de gestion de flotte automobile (Lourd).</p>
+        <div class="hero-links">
+          <a href="https://github.com/paysg71-arch/fleet_manager" target="_blank" class="btn-dark"><i class="fa-brands fa-github"></i> Acc√©der au repo GitHub</a>
+          <a href="documents/Fiche_Presentation_FleetManager.pdf" target="_blank" class="btn-outline-custom"><i class="fa-solid fa-file-pdf"></i> Fiche d'examen E5 compl√®te (PDF)</a>
+        </div>
       </div>
 
-      <div class="row g-4 mb-4 fade-up">
+      <div class="row g-4 mb-5 fade-up delay-2">
         <div class="col-md-4">
-          <div class="feature-card">
+          <div class="feature-card-p">
             <div class="feature-icon"><i class="fa-solid fa-car"></i></div>
-            <h3>Gestion des v+Æhicules</h3>
-            <p>Suivi du cycle de vie : immatriculation, marque, ann+Æe, contr+¶le technique, alertes d'expiration
-              automatiques.</p>
+            <h3>Gestion des v√©hicules</h3>
+            <p>Suivi du cycle de vie, alertes d'expiration automatiques et contr√¥le technique.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="feature-card">
+          <div class="feature-card-p">
             <div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div>
-            <h3>Gestion des conducteurs</h3>
-            <p>Affectation des ressources humaines, suivi des permis et historique des affectations v+Æhicule /
-              conducteur.</p>
+            <h3>Conducteurs</h3>
+            <p>Affectation RH, suivi des permis et historique multi-dimensionnel.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="feature-card">
-            <div class="feature-icon"><i class="fa-solid fa-wrench"></i></div>
-            <h3>Planification maintenance</h3>
-            <p>Enregistrement des interventions, co++ts, alertes automatiques avant expiration de garantie ou CT.</p>
+          <div class="feature-card-p">
+            <div class="feature-icon"><i class="fa-solid fa-database"></i></div>
+            <h3>Architecture N-Tiers</h3>
+            <p>S√©paration DAL (EF/ADO) et BLL (M√©tier). Moteur de BDD MySQL.</p>
           </div>
         </div>
       </div>
 
       <div class="comp-tags fade-up">
-        <span class="comp-tag">Concevoir & d+Ævelopper une solution applicative</span>
-        <span class="comp-tag">Maintenance corrective / +Ævolutive</span>
-        <span class="comp-tag">G+Ærer les donn+Æes</span>
+        <span class="comp-tag">Concevoir & d√©velopper une solution applicative</span>
+        <span class="comp-tag">Maintenance corrective / √©volutive</span>
+        <span class="comp-tag">G√©rer les donn√©es</span>
       </div>
     </div>
   </section>
@@ -118,9 +92,9 @@
   <section class="section-pad section-alt" id="productions">
     <div class="container">
       <div class="fade-up">
-        <div class="section-tag">02 -¿ Productions</div>
-        <h2 class="section-title">Productions r+Æalis+Æes</h2>
-        <p class="section-sub">Quatre livrables principaux ont +Æt+Æ d+Ævelopp+Æs dans le cadre de cette r+Æalisation
+        <div class="section-tag">02 ¬∑ Productions</div>
+        <h2 class="section-title">Productions r√©alis√©es</h2>
+        <p class="section-sub">Quatre livrables principaux ont √©t√© d√©velopp√©s dans le cadre de cette r√©alisation
           professionnelle.</p>
       </div>
 
@@ -128,34 +102,34 @@
         <div class="prod-item">
           <div class="prod-num">01</div>
           <div>
-            <h4>Base de donn+Æes relationnelle SQL</h4>
-            <p>Sch+Æma comprenant les tables V+Æhicules, Marques, Conducteurs, Affectations et Maintenances. Cl+Æs
-              primaires et +Ætrang+øres pour l'int+Ægrit+Æ r+Æf+Ærentielle. Mod+øle normalis+Æ MCD ‘Â∆ MLD sous MySQL Workbench.
+            <h4>Base de donn√©es relationnelle SQL</h4>
+            <p>Sch√©ma comprenant les tables V√©hicules, Marques, Conducteurs, Affectations et Maintenances. Cl√©s
+              primaires et √©trang√®res pour l'int√©grit√© r√©f√©rentielle. Mod√®le normalis√© MCD ‚Üí MLD sous MySQL Workbench.
             </p>
           </div>
         </div>
         <div class="prod-item">
           <div class="prod-num">02</div>
           <div>
-            <h4>Interface Homme-Machine (IHM) ‘«ˆ Windows Forms / WPF</h4>
+            <h4>Interface Homme-Machine (IHM) ‚Äî Windows Forms / WPF</h4>
             <p>Formulaires avec validation par regex (plaques, dates CT), composants DataGridView pour l'affichage
-              dynamique et filtr+Æ des donn+Æes, tableau de bord synth+Ætique avec alertes.</p>
+              dynamique et filtr√© des donn√©es, tableau de bord synth√©tique avec alertes.</p>
           </div>
         </div>
         <div class="prod-item">
           <div class="prod-num">03</div>
           <div>
-            <h4>Logique m+Ætier CRUD en C#</h4>
-            <p>Impl+Æmentation compl+øte des op+Ærations Create / Read / Update / Delete sur l'ensemble des entit+Æs, avec
-              couche d'acc+øs aux donn+Æes (DAL) isol+Æe via ADO.NET / Entity Framework.</p>
+            <h4>Logique m√©tier CRUD en C#</h4>
+            <p>Impl√©mentation compl√®te des op√©rations Create / Read / Update / Delete sur l'ensemble des entit√©s, avec
+              couche d'acc√®s aux donn√©es (DAL) isol√©e via ADO.NET / Entity Framework.</p>
           </div>
         </div>
         <div class="prod-item">
           <div class="prod-num">04</div>
           <div>
-            <h4>Documentation technique compl+øte</h4>
+            <h4>Documentation technique compl√®te</h4>
             <p>Commentaires XML dans le code C#, README d'installation, dossier docs/ comprenant MCD/MLD, captures UI et
-              dictionnaire des donn+Æes.</p>
+              dictionnaire des donn√©es.</p>
           </div>
         </div>
       </div>
@@ -166,10 +140,10 @@
   <section class="section-pad" id="architecture">
     <div class="container">
       <div class="fade-up">
-        <div class="section-tag">03 -¿ Architecture</div>
+        <div class="section-tag">03 ¬∑ Architecture</div>
         <h2 class="section-title">Architecture 3-Tier</h2>
-        <p class="section-sub">L'application suit un mod+øle en couches s+Æparant clairement l'interface graphique, la
-          logique m+Ætier et l'acc+øs aux donn+Æes.</p>
+        <p class="section-sub">L'application suit un mod√®le en couches s√©parant clairement l'interface graphique, la
+          logique m√©tier et l'acc√®s aux donn√©es.</p>
       </div>
 
       <div class="row g-4 align-items-center fade-up">
@@ -178,7 +152,7 @@
             <span class="archi-badge">COUCHE 1</span>
             <i class="fa-solid fa-display"></i>
             <h4>UI Layer</h4>
-            <p>Windows Forms / WPF ‘«ˆ Formulaires, DataGridView, tableau de bord, validations.</p>
+            <p>Windows Forms / WPF ‚Äî Formulaires, DataGridView, tableau de bord, validations.</p>
           </div>
         </div>
         <div class="col-md-1 archi-arrow d-none d-md-flex">
@@ -188,8 +162,8 @@
           <div class="archi-card">
             <span class="archi-badge">COUCHE 2</span>
             <i class="fa-solid fa-gears"></i>
-            <h4>BLL ‘«ˆ Business Logic</h4>
-            <p>R+øgles m+Ætier, validation (regex plaques, dates), alertes CT et garanties.</p>
+            <h4>BLL ‚Äî Business Logic</h4>
+            <p>R√®gles m√©tier, validation (regex plaques, dates), alertes CT et garanties.</p>
           </div>
         </div>
         <div class="col-md-1 archi-arrow d-none d-md-flex">
@@ -199,8 +173,8 @@
           <div class="archi-card">
             <span class="archi-badge">COUCHE 3</span>
             <i class="fa-solid fa-database"></i>
-            <h4>DAL ‘«ˆ Data Access</h4>
-            <p>ADO.NET / Entity Framework ‘«ˆ Requ+¨tes SQL param+Ætr+Æes, connexion MySQL localhost.</p>
+            <h4>DAL ‚Äî Data Access</h4>
+            <p>ADO.NET / Entity Framework ‚Äî Requ√™tes SQL param√©tr√©es, connexion MySQL localhost.</p>
           </div>
         </div>
       </div>
@@ -211,10 +185,10 @@
   <section class="section-pad section-alt" id="stack">
     <div class="container">
       <div class="fade-up">
-        <div class="section-tag">04 -¿ Stack technique</div>
+        <div class="section-tag">04 ¬∑ Stack technique</div>
         <h2 class="section-title">Outils & technologies</h2>
-        <p class="section-sub">Ensemble des ressources logicielles, mat+Ærielles et documentaires utilis+Æes pour la
-          conception et le d+Æveloppement.</p>
+        <p class="section-sub">Ensemble des ressources logicielles, mat√©rielles et documentaires utilis√©es pour la
+          conception et le d√©veloppement.</p>
       </div>
 
       <div class="row g-3 fade-up">
@@ -232,7 +206,7 @@
             <div class="stack-dot dot-blue"></div>
             <div>
               <div class="stack-name">Visual Studio</div>
-              <div class="stack-role">IDE de d+Æveloppement</div>
+              <div class="stack-role">IDE de d√©veloppement</div>
             </div>
           </div>
         </div>
@@ -250,7 +224,7 @@
             <div class="stack-dot dot-blue"></div>
             <div>
               <div class="stack-name">Looping / StarUML</div>
-              <div class="stack-role">Mod+Ælisation</div>
+              <div class="stack-role">Mod√©lisation</div>
             </div>
           </div>
         </div>
@@ -268,7 +242,7 @@
             <div class="stack-dot dot-green"></div>
             <div>
               <div class="stack-name">ADO.NET / EF</div>
-              <div class="stack-role">Acc+øs aux donn+Æes</div>
+              <div class="stack-role">Acc√®s aux donn√©es</div>
             </div>
           </div>
         </div>
@@ -286,7 +260,7 @@
             <div class="stack-dot dot-orange"></div>
             <div>
               <div class="stack-name">Windows 10 / 11</div>
-              <div class="stack-role">D+Æploiement desktop</div>
+              <div class="stack-role">D√©ploiement desktop</div>
             </div>
           </div>
         </div>
@@ -294,22 +268,22 @@
     </div>
   </section>
 
-  <!-- ===== R+ÎSULTATS ===== -->
+  <!-- ===== R√âSULTATS ===== -->
   <section class="section-pad" id="resultats">
     <div class="container">
       <div class="fade-up">
-        <div class="section-tag">05 -¿ R+Æsultats</div>
-        <h2 class="section-title">R+Æsultats obtenus</h2>
-        <p class="section-sub">Les indicateurs de performance mesur+Æs +· l'issue du d+Æveloppement d+Æmontrent l'efficacit+Æ
+        <div class="section-tag">05 ¬∑ R√©sultats</div>
+        <h2 class="section-title">R√©sultats obtenus</h2>
+        <p class="section-sub">Les indicateurs de performance mesur√©s √† l'issue du d√©veloppement d√©montrent l'efficacit√©
           de la solution mise en place.</p>
       </div>
 
       <div class="row g-4 mb-5 fade-up">
         <div class="col-md-4">
           <div class="kpi-card">
-            <div class="kpi-number">‘Í∆40%</div>
+            <div class="kpi-number">‚àí40%</div>
             <div class="kpi-label">Temps de recherche</div>
-            <div class="kpi-desc">R+Æduction du temps de recherche gr+Ûce +· la centralisation et au filtrage intelligent.
+            <div class="kpi-desc">R√©duction du temps de recherche gr√¢ce √† la centralisation et au filtrage intelligent.
             </div>
           </div>
         </div>
@@ -317,21 +291,21 @@
           <div class="kpi-card">
             <div class="kpi-number">100%</div>
             <div class="kpi-label">Alertes automatiques</div>
-            <div class="kpi-desc">Notification automatique avant expiration de garantie ou de contr+¶le technique.</div>
+            <div class="kpi-desc">Notification automatique avant expiration de garantie ou de contr√¥le technique.</div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="kpi-card">
             <div class="kpi-number">4/4</div>
             <div class="kpi-label">CRUD complet</div>
-            <div class="kpi-desc">Create, Read, Update et Delete enti+ørement impl+Æment+Æs sur les trois entit+Æs
+            <div class="kpi-desc">Create, Read, Update et Delete enti√®rement impl√©ment√©s sur les trois entit√©s
               principales.</div>
           </div>
         </div>
       </div>
 
       <div class="prog-wrap fade-up">
-        <div class="prog-label"><span>R+Æduction du temps de recherche</span><span>40%</span></div>
+        <div class="prog-label"><span>R√©duction du temps de recherche</span><span>40%</span></div>
         <div class="prog-track">
           <div class="prog-fill" style="width:40%;"></div>
         </div>
@@ -341,7 +315,7 @@
           <div class="prog-fill" style="width:100%; animation-delay:.2s;"></div>
         </div>
 
-        <div class="prog-label"><span>Alertes maintenance op+Ærationnelles</span><span>100%</span></div>
+        <div class="prog-label"><span>Alertes maintenance op√©rationnelles</span><span>100%</span></div>
         <div class="prog-track">
           <div class="prog-fill" style="width:100%; animation-delay:.4s;"></div>
         </div>
@@ -349,38 +323,38 @@
     </div>
   </section>
 
-  <!-- ===== ACC+ÍS ===== -->
+  <!-- ===== ACC√àS ===== -->
   <section class="section-pad section-alt" id="acces">
     <div class="container">
       <div class="fade-up">
-        <div class="section-tag">06 -¿ Acc+øs</div>
-        <h2 class="section-title">Acc+øs au projet</h2>
+        <div class="section-tag">06 ¬∑ Acc√®s</div>
+        <h2 class="section-title">Acc√®s au projet</h2>
         <p class="section-sub">Le code source est disponible publiquement sur GitHub avec toute la documentation
           technique.</p>
       </div>
 
       <div class="access-card fade-up">
-        <p>Le dossier <strong>docs/</strong> du d+Æp+¶t contient le MCD/MLD, les captures d'interface et le dictionnaire
-          des donn+Æes. Le fichier <strong>README.md</strong> d+Æcrit la proc+Ædure d'installation et les d+Æpendances
-          n+Æcessaires.</p>
+        <p>Le dossier <strong>docs/</strong> du d√©p√¥t contient le MCD/MLD, les captures d'interface et le dictionnaire
+          des donn√©es. Le fichier <strong>README.md</strong> d√©crit la proc√©dure d'installation et les d√©pendances
+          n√©cessaires.</p>
         <a href="https://github.com/paysg71-arch/fleet_manager" target="_blank" class="btn-dark">
           <i class="fa-brands fa-github"></i> Audran.ps / projet_fleet_manager
         </a>
 
         <div class="mt-4">
-          <h4 style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 12px; color: var(--dark);">Documents li+Æs au projet</h4>
+          <h4 style="font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 12px; color: var(--dark);">Documents li√©s au projet</h4>
           <div class="d-flex flex-wrap gap-3 mt-3">
             <a href="documents/Fiche_Presentation_FleetManager.pdf" target="_blank" class="doc-link"><i class="fa-solid fa-file-pdf"></i> Fiche d'Examen E5</a>
             <a href="documents/5_cahier_des_charges_fleet.docx" class="doc-link"><i class="fa-solid fa-file-word"></i> Cahier des Charges</a>
             <a href="documents/6_manuel_utilisation_fleet.docx" class="doc-link"><i class="fa-solid fa-file-word"></i> Manuel d'Utilisation</a>
             <a href="documents/8_gantt_fleet.docx" class="doc-link"><i class="fa-solid fa-file-word"></i> Gantt</a>
-            <a href="documents/FleetManager_BDD_v2.docx" class="doc-link"><i class="fa-solid fa-file-word"></i> Base de Donn+Æes</a>
+            <a href="documents/FleetManager_BDD_v2.docx" class="doc-link"><i class="fa-solid fa-file-word"></i> Base de Donn√©es</a>
           </div>
         </div>
 
         <div class="cred-box">
-          <strong>‘‹· Identifiants de d+Æmonstration</strong><br>
-          Login : <strong>admin</strong> &nbsp;-¿&nbsp; Mot de passe : <strong>admin123</strong>
+          <strong>‚ö† Identifiants de d√©monstration</strong><br>
+          Login : <strong>admin</strong> &nbsp;¬∑&nbsp; Mot de passe : <strong>admin123</strong>
         </div>
       </div>
     </div>
@@ -389,8 +363,8 @@
   <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-divider"></div>
-    <p>BTS SIO -¿ Option SLAM -¿ +Îpreuve E5 -¿ Session 2025</p>
-    <p>Pays Audran ‘«ˆ N-¶ 02542532580 ‘«ˆ <a href="#">Insta Paris</a></p>
+    <p>BTS SIO ¬∑ Option SLAM ¬∑ √âpreuve E5 ¬∑ Session 2025</p>
+    <p>Pays Audran ‚Äî N¬∞ 02542532580 ‚Äî <a href="#">Insta Paris</a></p>
   </footer>
 
   <!-- Back to top -->
