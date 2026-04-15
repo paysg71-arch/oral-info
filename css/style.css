@@ -5,13 +5,13 @@
    ========================================================================= */
 
 /* 1. Design System & Composants Globaux */
-@import url('global.css?v=4');
+@import url('global.css?v=5');
 
 /* 2. Pages individuelles */
-@import url('index.css?v=4');        /* Accueil */
-@import url('apropos.css?v=4');      /* À Propos */
-@import url('competence.css?v=4');   /* Compétences */
-@import url('synthese.css?v=4');     /* Synthèse E5 */
-@import url('blog.css?v=4');        /* Blog */
-@import url('veille.css?v=4');      /* Veille Technologique */
-@import url('projets.css?v=4');     /* Fleet Manager & Nanos */
+@import url('index.css?v=5');        /* Accueil */
+@import url('apropos.css?v=5');      /* À Propos */
+@import url('competence.css?v=5');   /* Compétences */
+@import url('synthese.css?v=5');     /* Synthèse E5 */
+@import url('blog.css?v=5');        /* Blog */
+@import url('veille.css?v=5');      /* Veille Technologique */
+@import url('projets.css?v=5');     /* Fleet Manager & Nanos */
