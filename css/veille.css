@@ -107,7 +107,7 @@
   border-right: 1px solid rgba(255,255,255,0.05);
 }
 .gmail-compose {
-  background: linear-gradient(135deg, var(--yellow), #ff8c00); color: var(--dark); border: none; border-radius: 20px;
+  background: linear-gradient(135deg, var(--yellow), #ffcc00); color: #000; border: none; border-radius: 20px;
   padding: 18px 24px; font-weight: 800; font-size: 1rem;
   font-family: var(--font-head); display: inline-flex; align-items: center; gap: 15px;
   margin: 0 20px 30px 20px; cursor: pointer;
@@ -162,3 +162,26 @@
 }
 .notif-toast i.fa-bell { font-size: 1.8rem; color: var(--yellow); animation: ringBell 2s infinite; filter: drop-shadow(0 0 10px var(--yellow)); }
 @keyframes ringBell { 0%, 100% { transform: rotate(0); } 10%, 30%, 50% { transform: rotate(15deg); } 20%, 40% { transform: rotate(-15deg); } 60% { transform: rotate(0); } }
+
+/* Gmail Reader CSS */
+.gmail-reader {
+  display: none;
+  padding: 30px 40px;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  background: rgba(10,15,25,0.2);
+}
+.gmail-reader.active { display: block; animation: fadeIn 0.4s; }
+.reader-back { color: var(--mid); cursor: pointer; display: inline-flex; align-items: center; gap: 10px; margin-bottom: 30px; font-weight: 600; transition: color 0.3s; }
+.reader-back:hover { color: var(--yellow); }
+.reader-subject { font-size: 1.5rem; color: var(--text-main); font-weight: 700; margin-bottom: 25px; line-height: 1.4; }
+.reader-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; }
+.reader-sender-info { display: flex; gap: 15px; align-items: center; }
+.reader-sender-avatar { width: 45px; height: 45px; background: rgba(255,229,0,0.1); color: var(--yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+.reader-sender-name { font-weight: 700; color: var(--text-main); }
+.reader-sender-email { color: var(--mid); font-weight: 400; font-size: 0.9rem; }
+.reader-date { color: var(--mid); font-size: 0.9rem; margin-top: 5px; }
+.reader-body { color: var(--text-main); line-height: 1.8; font-size: 1.05rem; }
+.reader-body p { margin-bottom: 15px; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
