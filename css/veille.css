@@ -242,3 +242,21 @@
 .reader-body p { margin-bottom: 15px; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+/* External Source Links */
+.ext-source-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 24px; border-radius: 50px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-main); font-weight: 600; font-family: var(--font-head);
+  font-size: 0.9rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5); backdrop-filter: blur(5px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.ext-source-link i { font-size: 1.1rem; color: var(--yellow); transition: transform 0.4s; }
+.ext-source-link:hover {
+  background: rgba(255,229,0,0.1); border-color: var(--yellow);
+  color: var(--yellow); transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.8), inset 0 0 15px rgba(255,229,0,0.2);
+}
+.ext-source-link:hover i { transform: scale(1.2) rotate(10deg); color: var(--yellow); text-shadow: 0 0 10px var(--yellow); }
+
